@@ -1,0 +1,146 @@
+<!-- Filtering card -->
+<div class="card filter-card">
+    <div class="col-sm-6">
+        <div class="card-body">
+            <h5 class="font-14">{{'right-sidebar.search' | translate}}</h5>
+            <form action="" class="">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <button type="submit" class="input-group-text bg-sette">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row negative-margin">
+                    <div class="col-sm-6">
+                        <label for="{{'right-sidebar.search-period' | translate}}од">{{'right-sidebar.search-period' | translate}} {{'right-sidebar.from' |
+                            translate}} <small class="text-muted"></small></label>
+                        <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="од"
+                            im-insert="true">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                        <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="до"
+                            im-insert="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.company' | translate}}</label>
+                <input type="text" class="form-control" id="" placeholder="{{'right-sidebar.company' | translate}}"
+                    name="" ng-model="" data-ng-minlength="3">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.embs' | translate}}</label>
+                <input type="text" class="form-control" id="" placeholder="{{'right-sidebar.embs' | translate}}" name=""
+                    ng-model="" data-ng-minlength="3">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label for="bankruptcy_phase" class="form-label">{{'right-sidebar.phase' | translate}}</label>
+                <select name="bankruptcy_phase" id="bankruptcy_phase" ng-model="bankruptcy_phase" class="form-control">
+                    <option value="" disabled selected hidden>{{'right-sidebar.phase' | translate}}</option>
+                    <option *ngFor="let bankruptcy of bankruptciesList" [value]="bankruptcy.bankruptcy_phase">
+                        {{bankruptcy.bankruptcy_phase}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row mt-2">
+                    <div class="col-sm-3 col-lg-3 mt-1">
+                        <a href="#" class="btn btn-circle btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 mt-1 ">
+                        <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End filtering card -->
+
+
+<!-- Filtering card --
+<div class="card filter-card">
+    <div class="card-body">
+        <h5 class="font-14">{{'right-sidebar.search' | translate}}</h5>
+        <form action="" class="">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <button type="submit" class="input-group-text bg-sette">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body border-top">
+        <h3 class="font-14">{{'right-sidebar.search-period' | translate}}</h3>
+        <div class="form-group row negative-margin">
+            <div class="col-sm-5">
+                <label for="{{'right-sidebar.search-period' | translate}}од">{{'right-sidebar.from' | translate}} <small class="text-muted"></small></label>
+                <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="од"
+                    im-insert="true">
+            </div>
+            <div class="col-sm-5">
+                <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="до" im-insert="true">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-body border-top">
+        <label>{{'right-sidebar.company' | translate}}</label>
+        <input type="text" class="form-control" id="" placeholder="{{'right-sidebar.company' | translate}}" name="" ng-model=""
+            data-ng-minlength="3">
+        <br>
+        <label>{{'right-sidebar.embs' | translate}}</label>
+        <input type="text" class="form-control" id="" placeholder="{{'right-sidebar.embs' | translate}}" name="" ng-model=""
+            data-ng-minlength="3">
+        <br>
+        <label for="bankruptcy_phase" class="form-label">{{'right-sidebar.phase' | translate}}</label>
+        <select name="bankruptcy_phase" id="bankruptcy_phase" ng-model="bankruptcy_phase" class="form-control">
+            <option value="" disabled selected hidden>{{'right-sidebar.phase' | translate}}</option>
+            <option *ngFor="let bankruptcy of bankruptciesList" [value]="bankruptcy.bankruptcy_phase">{{bankruptcy.bankruptcy_phase}}</option>
+        </select>
+            
+        <br>
+     
+    </div>
+
+    <div class="card-body border-top">
+        <div class="form-group row mt-2">
+            <div class="col-sm-4 col-lg-6">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-1' | translate}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border-top">
+        <div class="form-group row mt-2">
+            <div class="col-sm-6 col-lg-6 mt-1">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+            </div>
+            <div class="col-sm-6 col-lg-6 mt-1 ">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>-- End filtering card -->

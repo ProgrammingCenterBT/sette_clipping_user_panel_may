@@ -1,0 +1,244 @@
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img class="img-fluid" src="../assets/images/logo.png" alt="">
+        </a>
+
+        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </a>
+    </div>
+    <!-- End Logo -->
+
+
+    <div class="offcanvas offcanvas-start show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#info-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person-circle"></i><span>{{'left-sidebar.item-one' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="info-nav" class="nav-content-17 collapse " data-bs-parent="#info-nav">
+                    <li>
+                        <a class="nav-link collapsed" data-bs-target="#current-nav" data-bs-toggle="collapse" href="/home">
+                            <span>{{'informant.title' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="current-nav" class="nav-content collapse " data-bs-parent="#current-nav">
+                            <li>
+                                <a href="/home"><span>{{'informant.item-one' | translate}}</span></a>
+                            </li>
+                            <li *ngFor="let tag of clientTagsList">
+                                <a><span>{{tag.tags.tag_name_c}}</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person-circle"></i><span>{{'left-sidebar.item-two' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li *ngFor="let tag of clientTagsList" (click)="dropdownTags('bancrupt',tag.tags.tag_id)">
+                        <a><span>{{tag.tags.tag_name_c}}</span></a>
+
+                    </li>
+                </ul>
+            </li>
+            <!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="/tenders">
+                    <i class="bi bi-card-image"></i><span>{{'left-sidebar.item-three' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/tenders"><span>{{'tenders.item-one' | translate}}</span></a>
+                    </li>
+                    <li *ngFor="let tag of clientTagsList" (click)="dropdownTags('tenders',tag.tags.tag_id)">
+                        <a href="/tenders"><span>{{tag.tags.tag_name_c}}</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Forms Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="/notifications">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>{{'left-sidebar.item-four' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/notifications"><span>{{'notifications.item-one' | translate}}</span></a>
+                    </li>
+                    <li *ngFor="let tag of clientTagsList" (click)="dropdownTags('notifications',tag.tags.tag_id)">
+                        <a href="/notifications"><span>{{tag.tags.tag_name_c}}</span></a>
+
+                    </li>
+                </ul>
+            </li>
+            <!-- End Tables Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#bankruptcies-nav" data-bs-toggle="collapse" href="/bankruptcies">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>{{'left-sidebar.item-six' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="bankruptcies-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+                    <li>
+                        <a href="/bankruptcies"><span>{{'bankruptcies.item-one' | translate}}</span></a>
+                    </li>
+                    <li *ngFor="let tag of clientTagsList" (click)="dropdownTags('bankruptcies',tag.tags.tag_id)">
+                        <a href="/bankruptcies"><span>{{tag.tags.tag_name_c}}</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Bankruptcies Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#sales-nav" data-bs-toggle="collapse" href="/sales">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>{{'left-sidebar.item-seven' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="sales-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/sales"> <span>{{'sales.item-one' | translate}}</span></a>
+                    </li>
+                    <li *ngFor="let tag of clientTagsList" (click)="dropdownTags('sales',tag.tags.tag_id)">
+                        <a href="/sales"><span>{{tag.tags.tag_name_c}}</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Sales Nav -->
+
+
+            <li class="nav-divider" style="border-bottom: 1px solid #c3c3fc;"></li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bar-chart"></i><span>{{'left-sidebar.item-five' | translate}}</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="/broj-na-info">
+                            <span>{{'analytics.item-one' | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/info-po-tag">
+                            <span>{{'analytics.item-two' | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/info-po-medium">
+                            <span>{{'analytics.item-three' | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/info-po-avtor">
+                            <span>{{'analytics.item-four' | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/oceneti-vesti">
+                            <span>{{'analytics.item-five' | translate}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/word-cloud">
+                            <span>{{'analytics.item-six' | translate}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- End Charts Nav -->
+        </ul>
+    </div>
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+            <div class="search-bar">
+                <form class="search-form d-flex align-items-center">
+                    <input type="text" name="query" placeholder="{{'header.search' | translate}}">
+                    <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <!-- End Search Bar -->
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li>
+            <!-- End Search Icon-->
+
+            <li class="nav-item dropdown pe-3">
+                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                    <span>{{selectedLang}}</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-item" *ngFor="let language of languages" (click)="changeLanguage(language)">
+                        {{language}}
+                    </li>
+                </ul>
+                <!-- <ul [(ngModel)]="selectedLang" name="selectedLang" (change)="changeLanguage(language)" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-item" *ngFor="let lang of TransLang" value="{{lang}}">
+                    {{lang}}
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item d-flex align-items-center">
+                    <span>MK</span>
+                  </a>
+                </li>
+            </ul> -->
+            </li>
+
+            <li class="nav-item dropdown pe-3">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="../assets/images/default-profile-icon.jpg" alt="Profile" class="rounded-circle">
+                </a>
+                <!-- End Profile Iamge Icon -->
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>{{client_account}}</h6>
+                        <span>Available</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-person"></i>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-gear"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Log out</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Profile Dropdown Items -->
+            </li>
+            <!-- End Profile Nav -->
+        </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+
+</header>
+<!-- End Header -->

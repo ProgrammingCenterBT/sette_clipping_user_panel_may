@@ -1,0 +1,27 @@
+<img class="logo" src="../assets/images/logo.png">
+<div grid>
+    <div card="back">
+        <p class="headline" style="margin-top: 10%">Добредојдовте!</p>
+        <p class="txt-body">Клиент</p>
+        <p class="txt-body">Client</p>
+    </div>
+    <div card="front">
+        <p class="title mb-3">Најава</p>
+        <form>
+
+            <div class="form-group row">
+                <label class="">Корисничко име</label>
+                <input type="text" [(ngModel)]="username" class="form-control responsive-column mt-1">
+            </div>
+            <div class="form-group row">
+                <label class="mt-1">Лозинка</label>
+                <input type="password" class="form-control responsive-column mt-1" [(ngModel)]="password">
+            </div>
+
+            <button (click)="checkLogin()" class="btn btn-primary w-80 mt-3" mat-raised-button color="primary">Најава</button>
+        </form>
+        <div *ngIf="userNotFound">
+            <p class="txt-body mt-5 text-danger font-bold">Не е пронајден корисник!</p>
+        </div>
+    </div>
+</div>

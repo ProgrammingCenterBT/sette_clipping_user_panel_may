@@ -1,0 +1,68 @@
+<!--<app-header [filterByTagId]="getTendersByType('Измена')"></app-header>-->
+
+
+<app-header></app-header>
+
+<main id="main" class="main">
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+                <div class="btn-right">
+                    <button class="btn btn-navy btn-circle" (click)="toggleTag()"><i class="fa fa-angle-down"
+                            aria-hidden="true"></i> Напредно Пребарување</button>
+                </div>
+                <div *ngIf="showMe">
+                    <app-tender-sidebar (searchBySubjectEvent)="getDataFromTenderSidebar($event)"
+                        (searchByInstitutionEvent)="getDataFromTenderSidebarInstitutions($event)"></app-tender-sidebar>
+                    <br>
+                </div>
+
+                <!-- Reports -->
+                <div class="tableFixHead">
+                    <!-- <div class="table-responsive"> -->
+                    <br>
+                    <table class="table table-hover" id="tender">
+                        <div class="white-space search-results infinite-1" id="tenderCards" infinite-scroll
+                            [infiniteScrollDistance]="2" [infiniteScrollThrottle]="300" [scrollWindow]="false"
+                            (scrolled)="onScrollUp()">
+
+                            <thead class="bg-navy text-white text-center align-middle">
+                                <tr>
+                                    <th scope="col">Датум на објава</th>
+                                    <th scope="col">Краен Рок</th>
+                                    <th scope="col">Договорен орган</th>
+                                    <th scope="col">Предмет на договор</th>
+                                    <th scope="col">Тип</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                <tr class="table-striped align-middle text-center p-0"
+                                    *ngFor="let tender of tendersList| filterAll: {searchString} | filterObject:{'tender_subject':filterBySubject,'contractingInstitutionName':filterByInstitution}:true">
+                                    <td class="col-sm-1 text-nowrap">{{transformDate(tender.tender_date)}}</td>
+                                    <td class="col-sm-1 text-nowrap">{{transformDate(tender.tender_expire)}}</td>
+                                    <td>{{tender.contractingInstitutionName}}</td>
+                                    <td>{{tender.tender_subject}}</td>
+                                    <td>{{tender.tender_type}}</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- End Reports -->
+        <!-- End Left side columns -->
+        <!-- Right side columns -->
+        <!-- <div class="col-lg-4">
+                <app-tender-sidebar (searchBySubjectEvent)="getDataFromTenderSidebar($event)" (searchByInstitutionEvent)="getDataFromTenderSidebarInstitutions($event)"></app-tender-sidebar>
+            </div> -->
+    </section>
+</main>
+<!-- End #main -->
+
+
+<app-footer></app-footer>

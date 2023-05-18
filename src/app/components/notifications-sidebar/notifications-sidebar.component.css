@@ -1,0 +1,29 @@
+.card.filter-card{
+    padding: 20px 15px 10px 15px;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+}
+
+.card-body{
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.card.filter-card, h3, h5, .form-control, label{
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input.form-control{
+    padding: 4px;
+}
+
+.btn{
+    border-radius: .25rem;
+}

@@ -1,0 +1,148 @@
+<!-- Filtering card -->
+<div class="card filter-card">
+    <div class="col-sm-6">
+        <div class="card-body">
+            <h5>{{'right-sidebar.search' | translate}}</h5>
+            <form action="" class="">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <!-- <input matInput type="next" name="searchString" [(ngModel)]="searchString"> -->
+                    <!-- <div *ngFor="let notification of notificationList?.slice().reverse() | filterAll: searchString; orderBy:{notification_date}"></div> -->
+
+                    <!-- <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                        <input class="form-control" placeholder="{{'right-sidebar.search' | translate}}"
+                            (keyup)="onSearchKeyUp($event)">
+                    </div>
+                                 -->
+                    <button type="submit" class="input-group-text bg-sette">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <!-- <h3>{{'right-sidebar.search-period' | translate}}</h3> -->
+                <div class="form-group row negative-margin">
+                    <div class="col-sm-6">
+                        <label for="{{'right-sidebar.search-period' | translate}} од">{{'right-sidebar.search-period' |
+                            translate}} {{'right-sidebar.from' |
+                            translate}}
+                            <small class="text-muted"></small></label>
+                        <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="од"
+                            im-insert="true">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                        <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="до"
+                            im-insert="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.contracting-authority' | translate}}</label>
+                <input type="text" class="form-control" id="searchByPublisher"
+                    placeholder="{{'right-sidebar.contracting-authority' | translate}}" name="searchByPublisher"
+                    [(ngModel)]="searchByPublisher" (keyup)="addSearchPublisher(itemSearchPublisher.value)"
+                    data-ng-minlength="3" #itemSearchPublisher>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.subject-contact' | translate}}</label>
+                <input type="text" class="form-control" id="searchBySubject"
+                    placeholder="{{'right-sidebar.subject-contact' | translate}}" name="searchBySubject"
+                    [(ngModel)]="searchBySubject" (keyup)="addSearchSubject(itemSearchSubject.value)"
+                    data-ng-minlength="3" #itemSearchSubject>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.contractor' | translate}}</label>
+                <input type="text" class="form-control" id="searchByHolder"
+                    placeholder="{{'right-sidebar.contractor' | translate}}" name="searchByHolder"
+                    [(ngModel)]="searchByHolder" (keyup)="addSearchHolder(itemSearchHolder.value)" data-ng-minlength="3"
+                    #itemSearchHolder>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row mt-2">
+                    <div class="col-sm-3 col-lg-3 mt-1">
+                        <a href="#" class="btn btn-circle btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 mt-1 ">
+                        <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End filtering card -->
+
+
+<!-- -- Filtering card --
+<div class="card filter-card">
+    <div class="card-body">
+        <h5 class="font-14">{{'right-sidebar.search' | translate}}</h5>
+        <form action="" class="">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <button type="submit" class="input-group-text bg-sette">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body border-top">
+        <h3 class="font-14">{{'right-sidebar.search-period' | translate}}</h3>
+        <div class="form-group row negative-margin">
+            <div class="col-sm-5">
+                <label for="{{'right-sidebar.search-period' | translate}}Ð¾Ð´">{{'right-sidebar.from' | translate}} <small class="text-muted"></small></label>
+                <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="Ð¾Ð´" im-insert="true">
+            </div>
+            <div class="col-sm-5">
+                <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="Ð´Ð¾" im-insert="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body border-top">
+        <label>{{'right-sidebar.contracting-authority' | translate}}</label>
+        <input type="text" class="form-control" id="searchByPublisher" placeholder="{{'right-sidebar.contracting-authority' | translate}}" name="searchByPublisher" [(ngModel)]="searchByPublisher" (keyup)="addSearchPublisher(itemSearchPublisher.value)" data-ng-minlength="3"
+            #itemSearchPublisher>
+        <br>
+        <label>{{'right-sidebar.subject-contact' | translate}}</label>
+        <input type="text" class="form-control" id="searchBySubject" placeholder="{{'right-sidebar.subject-contact' | translate}}" name="searchBySubject" [(ngModel)]="searchBySubject" (keyup)="addSearchSubject(itemSearchSubject.value)" data-ng-minlength="3" #itemSearchSubject>
+        <br>
+        <label>{{'right-sidebar.contractor' | translate}}</label>
+        <input type="text" class="form-control" id="searchByHolder" placeholder="{{'right-sidebar.contractor' | translate}}" name="searchByHolder" [(ngModel)]="searchByHolder" (keyup)="addSearchHolder(itemSearchHolder.value)" data-ng-minlength="3" #itemSearchHolder>
+        <br>
+
+    </div>
+
+    <div class="card-body border-top">
+        <div class="form-group row mt-2">
+            <div class="col-sm-6 col-lg-6 mt-1">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+            </div>
+            <div class="col-sm-6 col-lg-6 mt-1 ">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+-- End filtering card - -->

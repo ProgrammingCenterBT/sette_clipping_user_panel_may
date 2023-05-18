@@ -1,0 +1,180 @@
+<!-- Filtering card -->
+<div class="card filter-card">
+    <div class="col-sm-6">
+        <div class="card-body">
+            <h5>{{'right-sidebar.search' | translate}}</h5>
+            <!-- <mat-form-field appearance="outline" class="w-responsive">
+                <mat-label>{{'right-sidebar.search' | translate}}</mat-label>
+                <input matInput type="next" name="searchString" [(ngModel)]="searchString">
+            </mat-form-field> -->
+
+            <form action="" class="">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <button type="submit" class="input-group-text bg-sette">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row negative-margin">
+                    <div class="col-sm-6">
+                        <label for="{{'right-sidebar.search-period' | translate}} од">{{'right-sidebar.search-period' |
+                            translate}} {{'right-sidebar.from' |
+                            translate}} <small class="text-muted"></small></label>
+                        <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="од"
+                            im-insert="true">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                        <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="до"
+                            im-insert="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.contracting-authority' | translate}}</label>
+                <input type="text" class="form-control" id="searchByInstitution"
+                    placeholder="{{'right-sidebar.contracting-authority' | translate}}" name="searchByInstitution"
+                    [(ngModel)]="searchByInstitution" (keyup)="addSearchInstitution(itemSearchByInstitution.value)"
+                    data-ng-minlength="3" #itemSearchByInstitution>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row negative-margin">
+                    <div class="col-sm-6">
+                        <label>{{'right-sidebar.deadline' | translate}} {{'right-sidebar.from' | translate}}<small
+                                class="text-muted"></small></label>
+                        <input type="date" class="form-control  date-inputmask"
+                            placeholder="{{'right-sidebar.deadline' | translate}}" id="date-mask" im-insert="true">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                        <input type="date" class="form-control date-inputmask"
+                            placeholder="{{'right-sidebar.deadline' | translate}}" id="date-mask" im-insert="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <label>{{'right-sidebar.subject-contact' | translate}}</label>
+                <input type="text" class="form-control" id="searchBySubject"
+                    placeholder="{{'right-sidebar.subject-contact' | translate}}" name="searchBySubject"
+                    [(ngModel)]="searchBySubject" (keyup)="addSearchSubject(newSearchItem.value)" data-ng-minlength="3"
+                    #newSearchItem>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card-body">
+
+            <label for="tender_type" class="form-label">{{'right-sidebar.tender-type' | translate}}</label>
+            <select name="tender_type" id="tender_type" ng-model="tender_type" class="form-control">
+                <option *ngFor="let tender in tendersList" value="{{tender.tender_type}}">{{tender.tender_type}}
+                    {{tender.tender_id}}
+
+                    <!-- <option *ngFor="let tender of tendersList" value="tender.tender_type">{{tender.tender_type}}  -->
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <div class="form-group row mt-2">
+                    <div class="col-sm-3 col-lg-3 mt-1">
+                        <a href="#" class="btn btn-circle btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+                    </div>
+                    <div class="col-sm-3 col-lg-3 mt-1 ">
+                        <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End filtering card -->
+
+    <!-- 
+
+    <div class="card filter-card">
+    <div class="card-body">
+        <h5>{{'right-sidebar.search' | translate}}</h5>
+        <form action="" class="">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <button type="submit" class="input-group-text bg-sette">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body">
+        <h3 >{{'right-sidebar.search-period' | translate}}</h3>
+        <div class="form-group row negative-margin">
+            <div class="col-sm-5">
+                <label for="{{'right-sidebar.search-period' | translate}} од">{{'right-sidebar.from' | translate}} <small class="text-muted"></small></label>
+                <input type="date" class="form-control  date-inputmask" id="date-mask" placeholder="од" im-insert="true">
+            </div>
+            <div class="col-sm-5">
+                <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                <input type="date" class="form-control date-inputmask" id="date-mask" placeholder="до" im-insert="true">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <h3>{{'right-sidebar.deadline' | translate}}</h3>
+        <div class="form-group row negative-margin">
+            <div class="col-sm-5">
+                <label>{{'right-sidebar.from' | translate}}<small class="text-muted"></small></label>
+                <input type="date" class="form-control  date-inputmask" placeholder="{{'right-sidebar.deadline' | translate}}" id="date-mask" im-insert="true">
+            </div>
+            <div class="col-sm-5">
+                <label>{{'right-sidebar.to' | translate}}<small class="text-muted"></small></label>
+                <input type="date" class="form-control date-inputmask" placeholder="{{'right-sidebar.deadline' | translate}}" id="date-mask" im-insert="true">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <label>{{'right-sidebar.contracting-authority' | translate}}</label>
+        <input type="text" class="form-control" id="searchByInstitution" placeholder="{{'right-sidebar.contracting-authority' | translate}}" name="searchByInstitution" [(ngModel)]="searchByInstitution" (keyup)="addSearchInstitution(itemSearchByInstitution.value)"
+            data-ng-minlength="3" #itemSearchByInstitution>
+        <br>
+        <label>{{'right-sidebar.subject-contact' | translate}}</label>
+        <input type="text" class="form-control" id="searchBySubject" placeholder="{{'right-sidebar.subject-contact' | translate}}" name="searchBySubject" [(ngModel)]="searchBySubject" (keyup)="addSearchSubject(newSearchItem.value)" data-ng-minlength="3" #newSearchItem>
+        <br>
+        <label for="tender_type" class="form-label">{{'right-sidebar.tender-type' | translate}}</label>
+        <select name="tender_type" id="tender_type" ng-model="tender_type" class="form-control">
+            <option value="" disabled selected hidden>{{'right-sidebar.tender-type' | translate}}</option>
+            <option *ngFor="let tender in tendersList" value="{{tender.tender_type}}">{{tender.tender_type}} {{tender.tender_id}}
+
+            <-- <option *ngFor="let tender of tendersList" value="tender.tender_type">{{tender.tender_type}} --
+            </option>
+        </select>
+    </div>
+
+    <div class="card-body">
+        <div class="form-group row mt-2">
+            <div class="col-sm-6 col-lg-6 mt-1">
+                <a href="#" class="btn btn-circle btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+            </div>
+            <div class="col-sm-6 col-lg-6 mt-1 ">
+                <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+</div>

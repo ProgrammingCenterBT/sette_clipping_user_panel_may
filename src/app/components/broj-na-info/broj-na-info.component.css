@@ -1,0 +1,16 @@
+.report-date{
+  background: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 50%;
+
+}
+
+.report-date .caret-left{
+  display: block;
+  width: 3%;
+  float: right;
+}
+

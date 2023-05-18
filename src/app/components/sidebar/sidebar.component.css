@@ -1,0 +1,38 @@
+.negative-margin{
+  margin-top: -20px;
+}
+
+.card-top{
+  margin-top: -5px;
+  margin-right: 2px;
+}
+
+.mt--5{
+  margin-top: -16px;
+}
+
+.mt--3{
+  margin-top: -12px;
+}
+
+.mt--8{
+  margin-top: -16px;
+}
+
+.mt--10{
+  margin-top: -18px;
+}
+
+
+
+.mb-sm-3{
+  margin-top: 5px;
+}
+
+.w-80{
+  width: 80%;
+}
+
+.w-30{
+  width: 30%;
+}

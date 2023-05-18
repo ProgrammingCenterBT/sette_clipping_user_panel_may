@@ -1,0 +1,60 @@
+<app-header></app-header>
+<main id="main" class="main">
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="btn-right">
+                    <button class="btn btn-navy btn-circle" (click)="toggleTag()"><i class="fa fa-angle-down"
+                            aria-hidden="true"></i> Напредно Пребарување</button>
+                </div>
+                <div *ngIf="showMe">
+                    <app-bankruptcies-sidebar></app-bankruptcies-sidebar>
+                </div>
+                <br>
+
+                <!-- Reports -->
+                <div class="tableFixHead">
+                    <br>
+                    <table class="table table-hover" id="bankruptcy">
+                        <div class="white-space search-results infinite-1" id="bankruptciesCards" infinite-scroll
+                            [infiniteScrollDistance]="2" [infiniteScrollThrottle]="300" [scrollWindow]="false"
+                            (scrolled)="onScrollUp()">
+                            <thead class="bg-navy text-white text-center align-middle">
+                                <tr>
+                                    <th scope="col">Датум на објава</th>
+                                    <th scope="col">Компанија</th>
+                                    <th scope="col">ЕМБС</th>
+                                    <th scope="col">Предмет на објава</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody class="table-striped align-middle text-center p-0">
+                                <tr *ngFor="let bankruptcy of bankruptciesList">
+                                    <td class="col-sm-1 text-nowrap">{{bankruptcy.bankruptcy_date}}</td>
+                                    <td class="col-sm-6 text-nowrap">{{bankruptcy.bankruptcy_name}}</td>
+                                    <td class="col-sm-2 text-nowrap">{{bankruptcy.bankruptcy_embs}}</td>
+                                    <td>{{bankruptcy.bankruptcy_description}}</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- </div> -->
+        <!-- End Left side columns -->
+        <!-- Right side columns -->
+        <!-- <div class="col-lg-4">
+                <app-bankruptcies-sidebar></app-bankruptcies-sidebar>
+            </div> -->
+        <!-- End Right side columns -->
+
+        <!-- </div> -->
+    </section>
+</main>
+<!-- End #main -->
+
+
+<app-footer></app-footer>

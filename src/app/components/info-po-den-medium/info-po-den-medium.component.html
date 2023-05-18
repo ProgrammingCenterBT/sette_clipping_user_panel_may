@@ -1,0 +1,26 @@
+<h3 class="mx-3 my-5"><b><i>{{'mediums.title-2' | translate}}</i></b></h3>
+<div id="chartdiv3" class="chartdiv"></div>
+<button class="show-table" (click)="toggleTag()"><span class="m-1">Show table</span></button>
+<span class="mx-2"></span>
+<div *ngIf="showMe">
+  <br>
+  <h5><i><u>Табеларен приказ на бројот на информации по ден по вид на медиум</u></i></h5>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Датум на клип</th>
+        <th>Име на тип на медиум</th>
+        <th>Број на информации по тип на медиум</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let chartInformation of chartModelClipsByDateByMediumTypeList">
+        <td>{{chartInformation.date_of_clip | date:'dd.MM.yyyy'}}</td>
+        <td>{{chartInformation.medium_type_name}}</td>
+        <td>{{chartInformation.num_of_info}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+</div>

@@ -1,0 +1,83 @@
+.text-navy{
+    color:rgb(37, 37, 78);
+}
+
+.bg-navy {
+    /* background-color:rgb(37, 37, 78); */
+    /* background-color: rgb(36, 72, 150); */
+    /* background-color: #455F8C; */
+    background-color: #1C4E80;
+}
+
+.btn-navy {
+    background-color: #1C4E80;
+    border-color: #1C4E80;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-navy:hover{
+    background-color: #1C4E80;
+    border-color: #1C4E80;
+    color: white;
+    font-weight: bold;
+}
+
+thead, tbody {
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0%;
+}
+
+td {
+    padding-left: 2px;
+    padding-right: 2px;  
+}
+
+.btn{
+    border-radius: .25rem;
+}
+
+.btn-right{
+    text-align: right;
+    margin-right: 2rem;
+}
+
+/*Infinite scroll */
+
+.search-results {
+    height: 34rem;
+    overflow-y: scroll;
+    overflow-x: auto;
+    margin: 0 2%;
+}
+
+.infinite-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(36, 72, 150);
+    box-shadow: inset 0 0 6px rgb(36, 72, 150);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.infinite-1::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.infinite-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(36, 72, 150);
+    box-shadow: inset 0 0 6px rgb(36, 72, 150);
+    background-color: rgb(36, 72, 150);
+}
+
+.white-space {
+    margin-top: .1rem;
+}
+
+  .tableFixHead thead th {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+    background-color: #1C4E80 !important;
+    color:white
+  }

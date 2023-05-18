@@ -1,0 +1,107 @@
+{
+  "header":{
+    "search": "Search here..."
+  },
+  "left-sidebar":  {
+    "item-one": "INFORMANT",
+    "item-two": "BRAND.M",
+    "item-three": "TENDERS",
+    "item-four": "NOTIFICATIONS",
+    "item-six": "BANKRUPTCIES",
+    "item-seven": "SALES",
+    "item-five": "ANALYTICS"
+  },
+  "informant": {
+    "title": "CURRENT",
+    "item-one": "INFORMANT"
+  },
+  "tenders":{
+    "item-one":"TENDERS"
+  }, 
+  "notifications": {
+    "item-one":"NOTIFICATIONS"
+  },
+  "bankruptcies": {
+    "item-one":"BANKRUPTCIES"
+  },
+  "sales": {
+    "item-one":"SALES"
+  }, 
+   "analytics": {
+    "item-one": "Number of information",
+    "item-two": "Number of information by tags",
+    "item-three": "Number of information by type of media",
+    "item-four": "Number of information by authors",
+    "item-five": "Rated News",
+    "item-six": "Word Cloud"
+  },
+  "right-sidebar": {
+    "search": "Search",
+    "interval-title": "Time interval",
+    "from": "from",
+    "to": "to",
+    "title-medium": "Medium type",
+    "option-1": "Show all",
+    "option-2": "Printed",
+    "option-3": "Web",
+    "option-4": "Television",
+    "option-5": "Radio",
+    "option-6": "Social medias",
+    "news-title": "Rated News",
+    "news-option-1": "Favorite",
+    "news-option-2": "Neutral",
+    "news-option-3": "Positive",
+    "button-1": "Show",
+    "button-2": "Short report",
+    "button-3": "Generate PDF",
+    "search-period": "Search period",
+    "deadline": "Deadline",
+    "contracting-authority": "Contracting authority",
+    "subject-contact": "Subject matter of contract",
+    "tender-type":"Tender Type",
+    "contractor": "Contractor",
+    "company": "Company",
+    "embs": "EMBS",
+    "phase": "Phase",
+    "date-sale": "Date of Sale",
+    "sale-place": "Place of sale",
+    "creditor": "Creditor",
+    "debtor": "Debtor",
+    "type-of-property": "Type of property"
+
+
+  
+  },
+  "broj-na-info":{
+    "title": "Number of information"
+  },
+  "tags":{
+    "title-1": "Number of information per tag",
+    "title-2": "% of information per tag",
+    "title-3": "Number of information per TAG per medium type",
+    "title-4": "Number of information per day per TAG"
+  },
+  "mediums":{
+    "title-1": "Number of information per medium/type of medium",
+    "title-2": "Number of information per day per type of medium",
+    "title-3": "% of information by type of medium",
+    "title-4": "Number of information by type of medium"
+  },
+  "authors":{
+    "title": "% representation of information by author"
+  },
+  "oceneti-vesti":{
+    "title": "Rated News",
+    "title-1": "Division of rated news",
+    "title-2": "% representation of rated news by type of medium"
+  },
+  "word-cloud":{
+    "title": "Word Cloud"
+  },
+  "footer": {
+    "about": "About Us",
+    "support": "Support",
+    "contact": "Contact"
+  }
+
+}

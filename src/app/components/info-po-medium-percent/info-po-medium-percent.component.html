@@ -1,0 +1,24 @@
+<h3 class="mx-3 my-5" ><b><i>{{'mediums.title-3' | translate}}</i></b></h3>
+<div id="chartdiv5" class="chartdiv"></div>
+<button class="show-table" (click)="toggleTag()"><span class="m-1">Show table</span></button>
+<span class="mx-2"></span>
+<div *ngIf="showMe">
+    <br><br>
+    <h5><i><u>Табеларен приказ на бројот на информации</u></i></h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Име на тип на медиум</th>
+                <th>Број на медиуми</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Podatocite treba da se smenat!!! -->
+            <tr *ngFor="let chartInformation of chartModelMediumTypeList">
+                <td>{{chartInformation.medium_type_name}}</td>
+                <td>{{chartInformation.num_of_mediums}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

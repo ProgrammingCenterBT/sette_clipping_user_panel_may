@@ -1,0 +1,42 @@
+<app-header></app-header>
+<main id="main" class="main">
+  <section class="section dashboard">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="col-lg-12">
+          <h3 class="mx-3 mt-2 mb-2"><b><i>{{'tags.title-1' | translate}}</i></b></h3>
+
+          <div id="chartdiv" class="chartdiv"></div>
+          <button class="show-table" (click)="toggleTag()"><span class="m-1">Show table</span></button>
+          <!-- <span class="mx-2"></span>
+          <button class="export" type="button" id="export1"><i class="bi bi-arrow-bar-up" aria-hidden="true"></i><span class="m-1">Export</span></button>
+          <span class="mx-2"></span>
+          <button title="Export as PDF" class="export" type="button" (click)="savePDF()" aria-hidden="true"><i class="bi bi-file-earmark-pdf-fill"></i></button> -->
+          <div *ngIf="showMe">
+              <br><br>
+              <h5><i><u>Табеларен приказ на бројот на информации по таг</u></i></h5>
+              <table class="table table-striped">
+                      <tr>
+                          <th>Име на таг</th>
+                          <th>Број на информации по таг</th>
+                      </tr>
+                      <tr *ngFor="let chartInformation of chartModelTagList">
+                          <td>{{chartInformation.tag_name_c}}</td>
+                          <td>{{chartInformation.num_of_tags}}</td>
+                          <td></td>
+                      </tr>
+              </table>
+          </div>
+            <app-info-po-tag-pie></app-info-po-tag-pie>
+            <app-info-tag-medium></app-info-tag-medium>
+            <app-info-po-den-tag></app-info-po-den-tag>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+
+<app-footer></app-footer>

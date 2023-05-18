@@ -1,0 +1,51 @@
+<app-header></app-header>
+<main id="main" class="main">
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="col-lg-12">
+                    <h1 class="ml-5">МЕДИУМ</h1>
+
+                    <!-- chartdiv -->
+                    <app-partitioned-bar-chart></app-partitioned-bar-chart>
+
+                    <!-- chartdiv2 -->
+                    <app-radar-timeline></app-radar-timeline>
+
+                    <h1 class="m-5">ВИД НА МЕДИУМ</h1>
+
+                    <h3 class="mx-3 my-5"><b><i>{{'mediums.title-4' | translate}}</i></b></h3>
+                    <div id="chartdiv" class="chartdiv"></div>
+                    <button class="show-table" (click)="toggleTag()"><span class="m-1">Show table</span></button>
+                    <span class="mx-2"></span>
+                    <div *ngIf="showMe">
+                        <br>
+                        <h5><i><u>Табеларен приказ на бројот на информации по медиум</u></i></h5>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Име на медиум</th>
+                                    <th>Број на информации по медиум</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let chartInformation of chartModelMediumTypeList.reverse()">
+                                    <td>{{chartInformation.medium_type_name}}</td>
+                                    <td>{{chartInformation.num_of_mediums}}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <app-info-po-den-medium></app-info-po-den-medium>
+                    <app-info-po-medium-percent></app-info-po-medium-percent>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>

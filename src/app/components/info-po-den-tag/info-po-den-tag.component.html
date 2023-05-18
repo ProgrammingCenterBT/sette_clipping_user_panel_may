@@ -1,0 +1,27 @@
+<h3 class="mx-3 my-5"><b><i>{{'tags.title-4' | translate}}</i></b></h3>
+<div id="chartdiv4" class="chartdiv"></div>
+<button class="show-table" (click)="toggleTag()"><span class="m-1">Show table</span></button>
+<span class="mx-2"></span>
+
+<div *ngIf="showMe">
+    <br>
+    <h5><i><u>Табеларен приказ на бројот на информации по медиум</u></i></h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Име на таг</th>
+                <th>Датум на клип</th>
+                <th>Број на информации по дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let chartInformation of chartClipsByTagByDateList">
+                <td>{{chartInformation.tag_name_c}}</td>
+                <td>{{chartInformation.date_of_clip | date:'dd.MM.yyyy'}}</td>
+                <td>{{chartInformation.info_per_date}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</div>

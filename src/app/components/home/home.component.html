@@ -1,0 +1,182 @@
+<app-header></app-header>
+<main id="main" class="main">
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Left side columns -->
+            <div class="col-lg-9">
+                <div class="row">
+                    <!-- Reports -->
+                    <!-- <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">14-04-2022 </div>
+
+                            <div class="filter">
+                                <a href="#" class="mx-1 badge badge-light">
+                                    <input type="checkbox" name="" id="">
+                                </a>
+                                <a href="#" class="mx-1 badge badge-light">
+                                    <i class="bi bi-chat-left-fill"></i>
+                                </a>
+                                <a href="#" class="mx-1 badge badge-light">
+                                    <i class="bi bi-emoji-smile-fill"></i>
+                                </a>
+                                <a href="#" class="badge badge-light">
+                                    <i class="bi bi-star-fill"></i>
+                                </a>
+                            </div>
+
+                            <div class="card-body">
+                                <h2 class="card-title" style="font-size: 16px;">Наслов</h2>
+                            </div>
+
+                        </div>
+                    </div> -->
+                    <!-- End Reports -->
+
+                    <!-- Reports -->
+                    <div class="col-12" *ngFor="let clip of funClipList">
+                        <div [ngClass]="findfavoritePages(clip.clip_id)!=-1 ? 'card':'card'" id="card-{{favoritePk}}">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="../../../assets/sette_documents/{{clip.clip_image_url}}" class="rounded float-left" alt="">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-header">{{transformDate(clip.date_of_clip)}}</div>
+                                    <div class="filter">
+                                        <a href="#" class="mx-1 badge badge-light"><input type="checkbox" name="" id=""></a>
+                                        <a href="#" class="mx-1 badge badge-light"><i class="bi bi-chat-left-fill"></i></a>
+                                        <a (click)="favorites(clip.clip_id,favoritePk,'emoji', $event)" id="a-emoji-{{clip.clip_id}}-{{favoritePk}}" class="badge badge-light text-dark">
+                                            <i id="emoji-{{clip.clip_id}}-{{favoritePk}}" [ngClass]="(clip.clip_id==emoji_clip_id) ? emoji : 'bi bi-emoji-neutral-fill' "></i>
+                                        </a>
+                                        <a (click)="favorites(clip.clip_id,favoritePk,'stars', $event)" id="a-stars-{{clip.clip_id}}-{{favoritePk}}" class="badge badge-light text-dark">
+                                            <i id="stars-{{clip.clip_id}}-{{favoritePk}}" [ngClass]="(stars_clip_id) ? 'bi bi-star-fill text-warning' : 'bi bi-star-fill' "></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title" *ngIf="lang==='true'">{{(clip.medium_name!="")? clip.medium_name : clip.medium_name_cyrilic}}</h5>
+                                        <h5 class="card-title" *ngIf="lang!=='true'">{{clip.medium_name_cyrilic}}</h5>
+                                        <h3 class="card-title" *ngIf="lang==='true'"><a href="{{clip.clip_url}}" target="_blank">{{ (clip.clip_title_english!="")? clip.clip_title_english : clip.clip_title}}</a></h3>
+                                        <h3 class="card-title" *ngIf="lang!=='true'"><a href="{{clip.clip_url}}" target="_blank">{{clip.clip_title}}</a></h3>
+                                        <p *ngIf="lang==='true'">{{(clip.clip_title_english!="") ? clip.brief_english : clip.brief }}</p>
+                                        <p *ngIf="lang!=='true'">{{clip.brief}}</p>
+                                        <!-- <img src="{{clip.clip_image_url}}" class="rounded float-left"alt=""> -->
+                                        <!-- <h2 class="card-title" style="font-size: 16px;" *ngIf="lang==='true'">{{(clip.clip_title_english.length>0)? clip.clip_title_english :clip.clip_title}}</h2>
+                                <h2 class="card-title" style="font-size: 16px;" *ngIf="lang==='false'">{{clip.clip_title}}</h2>
+                                <p style="font-size: 12px;" *ngIf="lang==='true'">{{(clip.brief_english.length>0) ? clip.brief_english : clip.brief }}</p>
+                                <p style="font-size: 12px;" *ngIf="lang==='false'">{{clip.brief}}</p>
+                                <img src="{{clip.clip_image_url}}" alt=""> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Reports -->
+                </div>
+            </div>
+            <!-- End Left side columns -->
+            <!-- Right side columns -->
+            <div class="col-lg-3">
+
+                <!-- Filtering card -->
+                <div class="card filter-card">
+                    <div class="card-body mt-3">
+                        <h5 class="font-14">{{'right-sidebar.search' | translate}}</h5>
+                        <form action="" class="">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <button type="submit" class="input-group-text bg-sette">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body mt-3">
+                        <h3 class="font-14">{{'right-sidebar.interval-title' | translate}}</h3>
+                        <div class="form-group row negative-margin">
+                            <div class="col-sm-5">
+                                <label>{{'right-sidebar.from' | translate}} <small class="text-muted"></small></label>
+                                <input type="text" class="form-control  date-inputmask" id="date-mask" im-insert="true">
+                            </div>
+                            <div class="col-sm-5">
+                                <label>{{'right-sidebar.to' | translate}} <small class="text-muted"></small></label>
+                                <input type="text" class="form-control date-inputmask" id="date-mask" im-insert="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body mt-3">
+                        <h3 class="font-14">{{'right-sidebar.title-medium' | translate}}</h3>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck10">
+                            <label class="custom-control-label" for="customCheck10">{{'right-sidebar.option-1' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck11">
+                            <label class="custom-control-label" for="customCheck11">{{'right-sidebar.option-2' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck12">
+                            <label class="custom-control-label" for="customCheck12">{{'right-sidebar.option-3' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck13">
+                            <label class="custom-control-label" for="customCheck13">{{'right-sidebar.option-4' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck14">
+                            <label class="custom-control-label" for="customCheck14">{{'right-sidebar.option-5' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck15">
+                            <label class="custom-control-label" for="customCheck15">{{'right-sidebar.option-6' |
+                                translate}}</label>
+                        </div>
+                    </div>
+                    <div class="card-body border-top mt-3">
+                        <h3 class="font-14">{{'right-sidebar.news-title' | translate}}</h3>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck16">
+                            <label class="custom-control-label" for="customCheck16">{{'right-sidebar.news-option-1' |
+                                translate}}</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck17">
+                            <label class="custom-control-label" for="customCheck17">{{'right-sidebar.news-option-2' |
+                                translate}}</label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row mt-3">
+                            <div class="col-sm-4 col-lg-6">
+                                <a href="#" class="btn btn-primary">{{'right-sidebar.button-1' | translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row mt-2">
+                            <div class="col-sm-6 col-lg-6 mt-1">
+                                <a href="#" class="btn btn-primary">{{'right-sidebar.button-2' | translate}}</a>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 mt-1 mb-5 ">
+                                <a href="#" class="btn btn-primary">{{'right-sidebar.button-3' | translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End filtering card -->
+            </div>
+            <!-- End Right side columns -->
+
+        </div>
+    </section>
+</main>
+<!-- End #main -->
+
+
+<app-footer></app-footer>

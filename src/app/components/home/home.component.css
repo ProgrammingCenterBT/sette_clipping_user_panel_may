@@ -1,0 +1,67 @@
+img {
+    width: 150px;
+    padding-top: 50px;
+    padding-left: 15px;
+}
+
+.card-title {
+    padding: 3px;
+
+}
+
+h5.card-title {
+    margin-bottom: 0%;
+}
+
+.card-body {
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.card-header{
+    padding-left:20px;
+    padding-right: 20px;
+    font-size: 11px;
+}
+
+div.filter {
+    padding-right: 20px;
+}
+
+h3 {
+    color: navy;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+}
+
+.card {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p{
+    font-size: 11px;
+    text-align: justify;
+}
+
+.card.filter-card, h3, h5{
+    font-family: 'Ubuntu', sans-serif;
+
+
+}
+
+label.custom-control-label {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+div.card-body {
+    padding-bottom: 0%;
+}
+
