@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://clipping-user-panel-may.herokuapp.com/'
+  apiBaseUrl: 'https://clipping-java-backend-may-2023.herokuapp.com/'
 };
